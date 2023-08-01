@@ -33,4 +33,8 @@ Route::get('/teams/{id}', [TeamController::class, 'getTeam']);
 
 Route::post('/players', [Player::class, 'createPlayer']);
 Route::get('/players', [Player::class, 'listPlayers']);
-Route::get('/players/{id}', [TeamController::class, 'show player']);
+Route::get('/players/{id}', [TeamController::class, 'showPlayer']);
+
+Route::post('/managers', [ManagerController::class, 'createPManager']);
+Route::get('/managers', [ManagerController::class, 'listManagers']);
+Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
