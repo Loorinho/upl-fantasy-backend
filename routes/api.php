@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
+use App\Http\Controllers\ManagerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
