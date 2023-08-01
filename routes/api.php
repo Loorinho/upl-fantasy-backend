@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\TeamController;
+use App\Http\Controllers\PlayerController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -27,3 +28,9 @@ Route::get('/users', [AuthenticationController::class, 'getUsers']);
 
 Route::post('/teams', [TeamController::class, 'createTeam']);
 Route::get('/teams', [TeamController::class, 'getTeams']);
+Route::get('/teams/{id}', [TeamController::class, 'getTeam']);
+
+
+Route::post('/players', [Player::class, 'createPlayer']);
+Route::get('/players', [Player::class, 'listPlayers']);
+Route::get('/players/{id}', [TeamController::class, 'show player']);
