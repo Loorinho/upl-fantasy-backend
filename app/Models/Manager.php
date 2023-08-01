@@ -6,22 +6,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Player extends Model
+class Manager extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'first_name',
         'last_name',
-        'position',
-        'foot',
-        'shirt_number',
+        'team_id',
         'age',
-        'team_id'
     ];
 
 
-    /** A player belongs to a team */
+    /** A manager belongs to a team */
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);

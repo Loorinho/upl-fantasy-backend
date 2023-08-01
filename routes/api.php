@@ -32,10 +32,10 @@ Route::get('/teams', [TeamController::class, 'getTeams']);
 Route::get('/teams/{id}', [TeamController::class, 'getTeam']);
 
 
-Route::post('/players', [Player::class, 'createPlayer']);
-Route::get('/players', [Player::class, 'listPlayers']);
-Route::get('/players/{id}', [TeamController::class, 'showPlayer']);
+Route::post('/players', [PlayerController::class, 'createPlayer']);
+Route::get('/players', [PlayerController::class, 'listPlayers']);
+Route::get('/players/{id}', [PlayerController::class, 'showPlayer']);
 
-Route::post('/managers', [ManagerController::class, 'createPManager']);
+Route::post('/managers', [ManagerController::class, 'createManager']);
 Route::get('/managers', [ManagerController::class, 'listManagers']);
 Route::get('/managers/{id}', [ManagerController::class, 'showManager']);

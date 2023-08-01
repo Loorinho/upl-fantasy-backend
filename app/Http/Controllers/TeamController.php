@@ -20,9 +20,9 @@ class TeamController extends Controller
         ]);
     }
 
-    public function getTeams(Request $request)
+    public function getTeams()
     {
-        $teams = Team::all();
+        $teams = Team::all()->load(['players', 'manager']);
 
         return response()->json([
             'teams' => $teams,
