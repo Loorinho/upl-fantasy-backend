@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthenticationController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ManagerController;
+use App\Http\Controllers\TableController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +40,5 @@ Route::get('/players/{id}', [PlayerController::class, 'showPlayer']);
 Route::post('/managers', [ManagerController::class, 'createManager']);
 Route::get('/managers', [ManagerController::class, 'listManagers']);
 Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
+
+Route::get('/teams', [TeamController::class, 'getTable']);
