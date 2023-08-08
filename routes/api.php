@@ -41,4 +41,4 @@ Route::post('/managers', [ManagerController::class, 'createManager']);
 Route::get('/managers', [ManagerController::class, 'listManagers']);
 Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
 
-Route::get('/teams', [TeamController::class, 'getTable']);
+Route::get('/table', [TableController::class, 'getTable']);
