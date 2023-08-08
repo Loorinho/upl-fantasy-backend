@@ -11,7 +11,7 @@ class Table extends Model
     use HasFactory;
 
     protected $fillable = [
-        'club',
+        'team','position', 'played', 'won', 'drawn', 'lost', 'goals_for', 'goals_against',
     ];
 
     public function teams(): HasMany
