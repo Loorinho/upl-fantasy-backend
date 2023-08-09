@@ -9,7 +9,7 @@ class TableController extends Controller
 {
     public function getTable()
     {
-        $table = Table::all();
+        $table = Table::all()->load("team");
         return response()->json([
             'teams'=> $teams                    
         ]);
