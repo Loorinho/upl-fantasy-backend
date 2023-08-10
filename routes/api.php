@@ -5,6 +5,7 @@ use App\Http\Controllers\TeamController;
 use App\Http\Controllers\PlayerController;
 use App\Http\Controllers\ManagerController;
 use App\Http\Controllers\TableController;
+use App\Http\Controllers\FixturesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -42,3 +43,5 @@ Route::get('/managers', [ManagerController::class, 'listManagers']);
 Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
 
 Route::get('/table', [TableController::class, 'getTable']);
+
+Route::get('/fixtures, [FixturesController, 'getFixtures']);
