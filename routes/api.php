@@ -44,4 +44,4 @@ Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
 
 Route::get('/table', [TableController::class, 'getTable']);
 
-Route::get('/fixtures, [FixturesController, 'getFixtures']);
+Route::get('/fixtures', [FixturesController::class, 'getFixtures']);
