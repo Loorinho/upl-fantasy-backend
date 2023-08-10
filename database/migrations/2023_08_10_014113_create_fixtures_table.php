@@ -13,6 +13,11 @@ return new class extends Migration
     {
         Schema::create('fixtures', function (Blueprint $table) {
             $table->id();
+            $table->integer('home_team');
+            $table->integer('away_team');
+            $table->string('stadium');
+            $table->date('date');
+            $table->time('time');
             $table->timestamps();
         });
     }
