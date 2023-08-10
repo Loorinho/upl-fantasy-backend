@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('tables', function (Blueprint $table) {
             $table->id();
             $table->integer("position");
-            $table->unsignedBigInteger("team");
+            $table->unsignedBigInteger("team_id");
             $table->integer("played");
             $table->integer("won");
             $table->integer("drawn");

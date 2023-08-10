@@ -2,16 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use App\Models\Team;
+use App\Models\Table;
 
 class TableController extends Controller
 {
     public function getTable()
     {
-        $table = Table::all()->load("team");
+        // $table = Table::all()->load("teams");
+        $table = Table::all();
+
         return response()->json([
-            'teams'=> $teams                    
+            'table' => $table
         ]);
     }
 }
