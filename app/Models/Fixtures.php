@@ -10,5 +10,5 @@ class Fixtures extends Model
     use HasFactory;
 
 
-    protected $fillable = ['game_week', 'home_team', 'away_team', 'stadium', 'date', 'kick_off'];
+    protected $fillable = ['game_week', 'home_team', 'away_team', 'stadium', 'date', 'time', 'season'];
 }
