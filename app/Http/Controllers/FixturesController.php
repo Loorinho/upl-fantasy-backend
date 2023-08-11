@@ -7,7 +7,7 @@ use App\Models\Fixtures;
 
 class FixturesController extends Controller
 {
-     public function createFixtures(Request $request)
+     public function createFixture(Request $request)
     {
         $fixture = Fixtures::create([
             'season' =>  $request->season,
