@@ -18,9 +18,11 @@ class FixturesController extends Controller
             'date' => $request->date,
             'time' => $request->time,
         ]);
+        $fixtures = Fixtures::all();
 
         return response()->json([
-            'message' => "The fixture of " . $fixture->home_team . " vs " . $fixture->away_team . " created successfully"
+            'message' => "The fixture of " . $fixture->home_team . " vs " . $fixture->away_team . " created successfully",
+            'fixtures' => $fixtures
         ]);
     }
     public function getFixtures()
