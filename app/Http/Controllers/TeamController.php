@@ -13,10 +13,10 @@ class TeamController extends Controller
             'name'=>$request->name,
             'city'=>$request->city
        ]);
-
+        $teams = Team::all();
         return response()->json([
-            'team'=>$team,
-            'message'=> $team->name .' created successfully!'
+            'message'=> $team->name .' created successfully',
+            'teams' => $teams                    
         ]);
     }
 
