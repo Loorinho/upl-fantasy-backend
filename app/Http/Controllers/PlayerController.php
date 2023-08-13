@@ -18,9 +18,11 @@ class PlayerController extends Controller
             'team_id'=>$request->teamId,
             'age' => $request->age,
         ]);
-
+        $players = Player::all();
+        
         return response()->json([
-            'message' => $player->first_name . ' ' . $player->last_name . ' created successfully'
+            'message' => $player->first_name . ' ' . $player->last_name . ' created successfully',
+            'players' => $players
         ], 200);
     }
 
