@@ -15,12 +15,12 @@ class ManagerController extends Controller
         'team_id' => $request->teamId,
         'age' => $request->age,
     ]);
-
+    $managers = Manager::all();
     return response()->json([
-        'message' => $manager->first_name . ' '. $manager->last_name .' created successfully'
+        'message' => $manager->first_name . ' '. $manager->last_name .' created successfully',
+         'managers' => $managers                   
     ], 200);
    }
-
 
     public function listManagers()
     {
