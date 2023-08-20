@@ -28,4 +28,23 @@ class TeamController extends Controller
             'teams' => $teams,
         ]);
     }
+
+    public function updateTeam(Request $request, $id)
+    {
+        $team = Team::where('id', '=', $id)
+            ->update([
+                'name' => $request->name,
+                'city' => $request->city    
+            ]);
+        if(!$team){
+             return response()->json([
+            'message' => "Unable to update team",
+            ]);
+        }
+            
+        return response()->json([
+            'message'=> $request->name .' updated successfully',                
+        ]); 
+  
+    }
 }
