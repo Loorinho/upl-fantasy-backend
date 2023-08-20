@@ -43,4 +43,30 @@ class PlayerController extends Controller
             'player' => $player
         ], 200);
     }
+
+      public function updatePlayer(Request $request, $id)
+    {
+        $player = Player::where('id', '=', $id)
+            update([
+            'first_name' => $request->firstName,
+            'last_name' => $request->lastName,
+            'shirt_number' => $request->shirtNumber,
+            'position' => $request->position,
+            'foot' => $request->foot,
+            'team_id'=>$request->teamId,
+            'age' => $request->age,
+        ]);
+        if(!player){
+               return response()->json([
+                'message' => "Player could not be updated"
+            ], 400);
+        }
+        $players = Player::all();
+        
+        return response()->json([
+            'message' => $player->first_name . ' ' . $player->last_name . ' updated successfully',
+            'players' => $players
+        ], 200);
+    }
+
 }
