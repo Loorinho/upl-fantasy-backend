@@ -32,15 +32,19 @@ Route::get('/users', [AuthenticationController::class, 'getUsers']);
 Route::post('/teams', [TeamController::class, 'createTeam']);
 Route::get('/teams', [TeamController::class, 'getTeams']);
 Route::get('/teams/{id}', [TeamController::class, 'getTeam']);
+Route::update('/teams/{id}', [TeamController::class, 'updateTeam'])
+
 
 
 Route::post('/players', [PlayerController::class, 'createPlayer']);
 Route::get('/players', [PlayerController::class, 'listPlayers']);
 Route::get('/players/{id}', [PlayerController::class, 'showPlayer']);
+// Route::update('/players/{id}', [PlayerController::class, 'updatePlayer'])
 
 Route::post('/managers', [ManagerController::class, 'createManager']);
 Route::get('/managers', [ManagerController::class, 'listManagers']);
 Route::get('/managers/{id}', [ManagerController::class, 'showManager']);
+// Route::update('/managers/{id}', [ManagerController::class, 'updateManager'])
 
 Route::get('/table', [TableController::class, 'getTable']);
 
