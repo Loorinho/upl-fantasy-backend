@@ -38,4 +38,26 @@ class ManagerController extends Controller
             'manager' => $manager
         ], 200);
     }
+
+   public function updateManager(Request $request, $id)
+   {
+    $manager = Manager::where('id', '=', $id)
+        update([
+        'first_name'=>$request->firstName,
+        'last_name' => $request->lastName,
+        'team_id' => $request->teamId,
+        'age' => $request->age,
+    ]);
+     if(!$manager){  
+        return response()->json([
+            'message' => "Manager could not be updated. Try again later!"
+        ], 400);
+     }  
+    $managers = Manager::all();
+    return response()->json([
+        'message' => $manager->first_name . ' '. $manager->last_name .' updated successfully',
+         'managers' => $managers                   
+    ], 200);
+   }
+
 }
